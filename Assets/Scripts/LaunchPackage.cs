@@ -9,6 +9,7 @@ public class LaunchPackage : MonoBehaviour
     public Transform target;
     public float launchSpeed;
     public Transform launcher;
+    public Animator anim;
     // Start is called before the first frame update
     void Start()
     {
@@ -62,8 +63,15 @@ public class LaunchPackage : MonoBehaviour
         RotateLauncher();
         if (Input.GetMouseButtonDown(0))
         {
-            print("hi");
-            Launch();
+            if(!anim.GetCurrentAnimatorStateInfo(0).IsName("launch"))
+            {
+                Launch();
+                anim.SetBool("Launching", true);
+            }
+        }
+        else
+        {
+            anim.SetBool("Launching", false);
         }
     }
 }
