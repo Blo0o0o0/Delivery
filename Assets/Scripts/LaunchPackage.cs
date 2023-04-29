@@ -9,6 +9,7 @@ public class LaunchPackage : MonoBehaviour
     public Transform target;
     public float launchSpeed;
     public Transform launcher;
+    public Transform spoon;
     public Animator anim;
     // Start is called before the first frame update
     void Start()
@@ -45,10 +46,10 @@ public class LaunchPackage : MonoBehaviour
             return;
         }
         var obj = Instantiate(package);
-        obj.transform.position = launcher.position;
+        obj.transform.position = spoon.position;
         //assign the type
 
-        obj.GetComponent<Rigidbody>().velocity = CalculateLaunchVelocity(launcher.position, target.position);
+        obj.GetComponent<Rigidbody>().velocity = CalculateLaunchVelocity(spoon.position, target.position);
 
     }
 
@@ -63,7 +64,7 @@ public class LaunchPackage : MonoBehaviour
         RotateLauncher();
         if (Input.GetMouseButtonDown(0))
         {
-            if(!anim.GetCurrentAnimatorStateInfo(0).IsName("launch"))
+            if(!anim.GetCurrentAnimatorStateInfo(0).IsName("launch") )
             {
                 Launch();
                 anim.SetBool("Launching", true);
