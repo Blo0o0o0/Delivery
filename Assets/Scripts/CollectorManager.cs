@@ -19,7 +19,8 @@ public class CollectorManager : MonoBehaviour
     //add a desire for a package of type type to a random collector
     public void AddPackageToCollector(int type)
     {
-        //collectors[Random.Range(0, collectors.Count)];
+        int count=0;
+        while(!collectors[Random.Range(0, collectors.Count)].AddPackage(type) && count++ < collectors.Count);
     }
     
     // Update is called once per frame

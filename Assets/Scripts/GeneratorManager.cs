@@ -5,6 +5,8 @@ using UnityEngine;
 public class GeneratorManager : MonoBehaviour
 {
     public float timeBetweenPackages;
+    public int maxPackagesInOne;
+    public float maxPackagesTime;
     CollectorManager collectorManager;
     float timer;
     List<GeneratorBuilding> generators;
@@ -22,10 +24,10 @@ public class GeneratorManager : MonoBehaviour
     //choose a random generator and generate a package there.
     void Generate()
     {
-        int type = generators[Random.Range(0, generators.Count)];
+        int type = generators[Random.Range(0, generators.Count)].Generate();
 
         //assign the package to a collector
-        collectorManager.AddPackageToCollector(0);
+        collectorManager.AddPackageToCollector(type);
     }
 
     // Update is called once per frame
