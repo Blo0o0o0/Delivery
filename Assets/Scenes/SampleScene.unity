@@ -712,3 +712,4 @@ MonoBehaviour:
   maxSpeed: 15
   acceleration: 40
   drag: 2
+  maxTurnSpeed: 7

@@ -5,6 +5,7 @@ using UnityEngine;
 public class CollectorBuilding : MonoBehaviour
 {
     public CollectorManager manager;
+    public ScoreManager score;
     public int packagesLayer;
     public List<int> packages;
     int maxPackages = 3;
@@ -34,10 +35,12 @@ public class CollectorBuilding : MonoBehaviour
             {
                 packages.Remove(type);
                 //add score
+                score.AddPoints(1);
             }
             else
             {
                 //subtract score
+                score.AddPoints(-1);
             }
         }
     }
