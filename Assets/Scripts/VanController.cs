@@ -38,6 +38,8 @@ public class VanController : MonoBehaviour
 
     void FaceMoveDirection()
     {
+        if (currentVelocity.magnitude == 0)
+            return;
         //transform.LookAt(new Vector3(currentVelocity.x, 0, currentVelocity.y) + transform.position);
         Quaternion targetRotation = Quaternion.LookRotation(new Vector3(currentVelocity.x, 0, currentVelocity.y));
         float turnSpeed = Mathf.Min(maxTurnSpeed * Time.deltaTime, 1f);
