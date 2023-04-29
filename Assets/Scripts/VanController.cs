@@ -7,6 +7,7 @@ public class VanController : MonoBehaviour
     public float maxSpeed;
     public float acceleration;
     public float drag;
+    public float maxTurnSpeed;
     Vector2 currentVelocity;
     Vector2 currentAxis;
     // Start is called before the first frame update
@@ -37,7 +38,11 @@ public class VanController : MonoBehaviour
 
     void FaceMoveDirection()
     {
-        transform.LookAt(new Vector3(currentVelocity.x, 0, currentVelocity.y) + transform.position);
+        //transform.LookAt(new Vector3(currentVelocity.x, 0, currentVelocity.y) + transform.position);
+        Quaternion targetRotation = Quaternion.LookRotation(new Vector3(currentVelocity.x, 0, currentVelocity.y));
+        float turnSpeed = Mathf.Min(maxTurnSpeed * Time.deltaTime, 1f);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, turnSpeed);
+
     }
 
     // Update is called once per frame
