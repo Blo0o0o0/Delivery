@@ -30,7 +30,7 @@ public class CollectorBuilding : MonoBehaviour
         if(other.gameObject.layer == packagesLayer)
         {
             //get the package type
-            int type = 0;
+            int type = other.GetComponent<Package>().type;
             if(packages.Contains(type))
             {
                 packages.Remove(type);

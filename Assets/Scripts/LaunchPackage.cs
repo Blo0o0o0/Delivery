@@ -48,7 +48,7 @@ public class LaunchPackage : MonoBehaviour
         var obj = Instantiate(package);
         obj.transform.position = spoon.position;
         //assign the type
-
+        obj.GetComponent<Package>().type = packageType;
         obj.GetComponent<Rigidbody>().velocity = CalculateLaunchVelocity(spoon.position, target.position);
 
     }
