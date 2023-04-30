@@ -11,6 +11,7 @@ public class Package : MonoBehaviour
     public float suckSpeed;
     public float destroyDistance;
     public float destroyTime;
+    public InventoryManager inventory;
     bool sucking = false;
     // Start is called before the first frame update
     void Start()
@@ -38,6 +39,14 @@ public class Package : MonoBehaviour
         {
             sucking = false;
             GetComponent<Rigidbody>().isKinematic = false;
+        }
+    }
+    private void OnDestroy()
+    {
+        if(sucking)
+        {
+            //add it to the inventory
+            inventory.AddItem(type);
         }
     }
 }

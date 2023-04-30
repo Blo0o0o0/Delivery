@@ -6,7 +6,8 @@ public class GeneratorBuilding : MonoBehaviour
 {
     public int type;
     public int numPackages;
-    GeneratorManager manager;
+    public GeneratorManager manager;
+    public StackPackages stacker;
     int maxPackages;
     float packageTimer;
     float timer=0;
@@ -20,6 +21,7 @@ public class GeneratorBuilding : MonoBehaviour
     public int Generate()
     {
         numPackages++;
+        stacker.Stack(type);
         return type;
     }
     public int Suck()

@@ -7,23 +7,29 @@ public class GeneratorManager : MonoBehaviour
     public float timeBetweenPackages;
     public int maxPackagesInOne;
     public float maxPackagesTime;
-    CollectorManager collectorManager;
+    public CollectorManager collectorManager;
     float timer;
-    List<GeneratorBuilding> generators;
+    public List<GeneratorBuilding> generators;
     // Start is called before the first frame update
     void Start()
     {
-        
+        //generators = new List<GeneratorBuilding>();
     }
 
     public void AddGenerator(GeneratorBuilding generator)
     {
+        print(generator);
+        print(generators);
+        print("hi");
         generators.Add(generator);
+        print(generators);
     }
 
     //choose a random generator and generate a package there.
     void Generate()
     {
+        print(generators);
+        print(Random.Range(0, generators.Count));
         int type = generators[Random.Range(0, generators.Count)].Generate();
 
         //assign the package to a collector
