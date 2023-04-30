@@ -1,0 +1,26 @@
+25x25
+g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 
+g1 e4 s2 s2 s2 s2 s2 s2 s2 s2 s2 t2 s2 s2 s2 s2 s2 s2 s2 s2 s2 s2 s2 c2 g1 
+g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 s1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 s1 g1 
+g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 s1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 s1 g1 
+g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 s1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 s1 g1 
+g1 g1 g1 g1 g1 e1 g1 g1 g1 g1 g1 s1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 s1 g1 
+g1 g1 g1 g1 g1 s1 g1 g1 g1 g1 g1 s1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 s1 g1 
+g1 g1 g1 g1 g1 s1 g1 g1 g1 g1 g1 s1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 s1 g1 
+g1 e4 s2 s2 s2 t2 s2 s2 s2 s2 s2 x1 s2 s2 s2 s2 s2 e4 g1 g1 g1 g1 g1 s1 g1 
+g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 s1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 s1 g1 
+g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 s1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 s1 g1 
+g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 s1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 s1 g1 
+g1 g1 g1 c1 s2 s2 s2 s2 s2 s2 s2 t1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 s1 g1 
+g1 g1 g1 s1 g1 g1 g1 g1 g1 g1 g1 s1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 s1 g1 
+g1 g1 g1 s1 g1 g1 g1 g1 g1 g1 g1 c4 t1 s2 s2 s2 s2 s2 s2 s2 s2 s2 s2 c3 g1 
+g1 g1 g1 s1 g1 g1 g1 g1 g1 g1 g1 g1 s1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 
+g1 g1 g1 s1 g1 g1 g1 g1 g1 g1 g1 g1 s1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 
+g1 g1 g1 s1 g1 g1 g1 g1 g1 g1 g1 g1 s1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 
+g1 g1 g1 s1 g1 g1 g1 g1 g1 g1 g1 g1 s1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 
+g1 g1 g1 s1 g1 g1 g1 g1 g1 g1 g1 g1 t4 s2 s2 s2 s2 s2 e2 g1 g1 g1 g1 g1 g1 
+g1 g1 g1 s1 g1 g1 g1 g1 g1 g1 g1 g1 s1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 
+g1 g1 g1 c4 s2 s2 s2 s2 s2 s2 s2 s2 t2 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 
+g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 s1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 
+g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 s1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 
+g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 s1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 g1 
