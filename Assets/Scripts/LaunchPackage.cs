@@ -5,6 +5,7 @@ using UnityEngine;
 public class LaunchPackage : MonoBehaviour
 {
     public int packageType;
+    public float launchDelay;
     public GameObject package;
     public Transform target;
     public float launchSpeed;
@@ -66,7 +67,7 @@ public class LaunchPackage : MonoBehaviour
         {
             if(!anim.GetCurrentAnimatorStateInfo(0).IsName("launch") )
             {
-                Launch();
+                Invoke("Launch", launchDelay);
                 anim.SetBool("Launching", true);
             }
         }
