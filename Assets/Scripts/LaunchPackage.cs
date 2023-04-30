@@ -12,6 +12,7 @@ public class LaunchPackage : MonoBehaviour
     public Transform launcher;
     public Transform spoon;
     public Animator anim;
+    public GameObject endOfTube;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +52,8 @@ public class LaunchPackage : MonoBehaviour
         //assign the type
         obj.GetComponent<Package>().type = packageType;
         obj.GetComponent<Rigidbody>().velocity = CalculateLaunchVelocity(spoon.position, target.position);
+        obj.GetComponent<Package>().target = target.gameObject;
+        obj.GetComponent<Package>().endOfTube = endOfTube;
 
     }
 
