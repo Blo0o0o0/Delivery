@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -220,6 +220,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfb671835b4e7484ea5d0e60a2d1110f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  packageType: 0
+  package: {fileID: 675035106}
+  target: {fileID: 1352038486}
+  launchSpeed: 10
+  launcher: {fileID: 1489307310}
+  spoon: {fileID: 1326197061}
+  anim: {fileID: 1165934495}
 --- !u!1 &675035106
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,7 +373,7 @@ MonoBehaviour:
   maxSpeed: 10
   acceleration: 40
   drag: 2
-  maxTurnSpeed: 9
+  maxTurnSpeed: 3
 --- !u!4 &814668112
 Transform:
   m_ObjectHideFlags: 0
@@ -379,7 +386,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1506819563}
+  - {fileID: 1165934493}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -390,14 +397,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 814668112}
     m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 5b71483f118b2114598ad908f855fe8d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.68
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5b71483f118b2114598ad908f855fe8d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.65
-      objectReference: {fileID: 0}
     - target: {fileID: -8355290601700829554, guid: 5b71483f118b2114598ad908f855fe8d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -45.075455
@@ -485,6 +484,42 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: -5716681864270162303, guid: 5b71483f118b2114598ad908f855fe8d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5b71483f118b2114598ad908f855fe8d, type: 3}
+--- !u!4 &1165934493 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 5b71483f118b2114598ad908f855fe8d, type: 3}
+  m_PrefabInstance: {fileID: 1165934492}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1165934494 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 5b71483f118b2114598ad908f855fe8d, type: 3}
+  m_PrefabInstance: {fileID: 1165934492}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1165934495
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165934494}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 76868613e8e975f4f8dd571f505c665b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!4 &1326197061 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7277157830876367928, guid: 5b71483f118b2114598ad908f855fe8d, type: 3}
+  m_PrefabInstance: {fileID: 1165934492}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1352038481
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,10 +549,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1352038481}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e17682f29471f4142ac3362a97f12f09, type: 3}
+  m_Script: {fileID: 11500000, guid: 6469ef0658b037d4d85cc9372dfbb0ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  targetable:
+    serializedVersion: 2
+    m_Bits: 8
+  van: {fileID: 814668112}
+  maxDistanceFromVan: 10
 --- !u!65 &1352038483
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -596,9 +635,9 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1506819563 stripped
+--- !u!4 &1489307310 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5b71483f118b2114598ad908f855fe8d, type: 3}
+  m_CorrespondingSourceObject: {fileID: -1118922780428154804, guid: 5b71483f118b2114598ad908f855fe8d, type: 3}
   m_PrefabInstance: {fileID: 1165934492}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1557607619
