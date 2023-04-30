@@ -5,6 +5,7 @@ using UnityEngine;
 public class MapGenerator : MonoBehaviour
 {
     public float tileSize;
+    public float tileScale;
     public Vector3 startPosition;
     public GameObject end;
     public GameObject tJunction;
@@ -54,10 +55,12 @@ public class MapGenerator : MonoBehaviour
                         obj = Instantiate(grass);
                         break;
                 }
-                obj.transform.position = startPosition + tileSize * x * Vector3.right + tileSize * y * Vector3.forward;
+                obj.transform.position = startPosition + tileSize * tileScale * x * Vector3.right + tileSize * tileScale * y * Vector3.forward;
                 obj.transform.rotation = Quaternion.Euler(new Vector3(obj.transform.rotation.eulerAngles.x, 90 * numRotations, obj.transform.eulerAngles.z));
                 //obj.transform.Rotate(0, 90 * numRotations, 0);
-                //obj.transform.localScale *= tileSize;
+                obj.transform.localScale *= tileScale * 1.001f;
+                obj.gameObject.layer = 3;
+                obj.AddComponent<MeshCollider>();
             }
         }
 
