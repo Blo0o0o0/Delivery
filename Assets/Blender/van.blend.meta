@@ -3,7 +3,32 @@ guid: 12d80085755749c43bbae7b6d91d6412
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glass
+    second: {fileID: 2100000, guid: 9732ae432b8d9b14285e6114b6f4df52, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: headlights
+    second: {fileID: 2100000, guid: 55e8383b66015c745bfa9fba5f6e4406, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: vanbody
+    second: {fileID: 2100000, guid: 8eee81c0b561d8d41b67b4d9fc8f5a46, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wheels
+    second: {fileID: 2100000, guid: f1b8c99f70eeb174e9650f97593b85e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wood
+    second: {fileID: 2100000, guid: 8b268eeea69e9774087f8b48a108550b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

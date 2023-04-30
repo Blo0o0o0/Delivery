@@ -61,6 +61,7 @@ public class MapGenerator : MonoBehaviour
                 obj.transform.localScale *= tileScale * 1.001f;
                 obj.gameObject.layer = 3;
                 obj.AddComponent<MeshCollider>();
+                obj.transform.parent = transform;
             }
         }
 
