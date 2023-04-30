@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2738502037219050262}
   - component: {fileID: 6315247270409796095}
-  - component: {fileID: 2230338733885366067}
+  - component: {fileID: 6556449402630440432}
   m_Layer: 0
-  m_Name: BreadSprite
+  m_Name: CurrySprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 1265907963982903033}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.0532522, y: 1.5197306, z: 12.343484}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4d93570222b113b4084aa1bc51990536, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e229f5533af85cb4abb6e72ff66cb910, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2230338733885366067
+--- !u!114 &6556449402630440432
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
