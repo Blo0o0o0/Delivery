@@ -47,6 +47,11 @@ public class VanController : MonoBehaviour
 
     }
 
+    public float GetSpeed()
+    {
+        return currentVelocity.magnitude;
+    }
+
     // Update is called once per frame
     void Update()
     {
