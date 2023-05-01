@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class MapGenerator : MonoBehaviour
 {
+    public GameObject endOfTube;
+    public GameObject target;
+    public InventoryManager inventory;
     public float tileSize;
     public float tileScale;
     public Vector3 startPosition;
@@ -69,34 +72,58 @@ public class MapGenerator : MonoBehaviour
                     case 'b':
                         obj = Instantiate(butchers);
                         obj.GetComponent<GeneratorBuilding>().manager = GetComponent<GeneratorManager>();
+                        obj.GetComponentInChildren<StackPackages>().target = target;
+                        obj.GetComponentInChildren<StackPackages>().endOfTube = endOfTube;
+                        obj.GetComponentInChildren<StackPackages>().inventory = inventory;
                         break;
                     case 'a':
                         obj = Instantiate(bakers);
                         obj.GetComponent<GeneratorBuilding>().manager = GetComponent<GeneratorManager>();
+                        obj.GetComponentInChildren<StackPackages>().target = target;
+                        obj.GetComponentInChildren<StackPackages>().endOfTube = endOfTube;
+                        obj.GetComponentInChildren<StackPackages>().inventory = inventory;
                         break;
                     case 'd':
                         obj = Instantiate(dairy);
                         obj.GetComponent<GeneratorBuilding>().manager = GetComponent<GeneratorManager>();
+                        obj.GetComponentInChildren<StackPackages>().target = target;
+                        obj.GetComponentInChildren<StackPackages>().endOfTube = endOfTube;
+                        obj.GetComponentInChildren<StackPackages>().inventory = inventory;
                         break;
                     case 'i':
                         obj = Instantiate(iceCream);
                         obj.GetComponent<GeneratorBuilding>().manager = GetComponent<GeneratorManager>();
+                        obj.GetComponentInChildren<StackPackages>().target = target;
+                        obj.GetComponentInChildren<StackPackages>().endOfTube = endOfTube;
+                        obj.GetComponentInChildren<StackPackages>().inventory = inventory;
                         break;
                     case 'k':
                         obj = Instantiate(takeaway);
                         obj.GetComponent<GeneratorBuilding>().manager = GetComponent<GeneratorManager>();
+                        obj.GetComponentInChildren<StackPackages>().target = target;
+                        obj.GetComponentInChildren<StackPackages>().endOfTube = endOfTube;
+                        obj.GetComponentInChildren<StackPackages>().inventory = inventory;
                         break;
                     case 'p':
                         obj = Instantiate(pizzaria);
                         obj.GetComponent<GeneratorBuilding>().manager = GetComponent<GeneratorManager>();
+                        obj.GetComponentInChildren<StackPackages>().target = target;
+                        obj.GetComponentInChildren<StackPackages>().endOfTube = endOfTube;
+                        obj.GetComponentInChildren<StackPackages>().inventory = inventory;
                         break;
                     case 'u':
                         obj = Instantiate(curry);
                         obj.GetComponent<GeneratorBuilding>().manager = GetComponent<GeneratorManager>();
+                        obj.GetComponentInChildren<StackPackages>().target = target;
+                        obj.GetComponentInChildren<StackPackages>().endOfTube = endOfTube;
+                        obj.GetComponentInChildren<StackPackages>().inventory = inventory;
                         break;
                     case 'r':
                         obj = Instantiate(groceries);
                         obj.GetComponent<GeneratorBuilding>().manager = GetComponent<GeneratorManager>();
+                        obj.GetComponentInChildren<StackPackages>().target = target;
+                        obj.GetComponentInChildren<StackPackages>().endOfTube = endOfTube;
+                        obj.GetComponentInChildren<StackPackages>().inventory = inventory;
                         break;
                     case 'h':
                         obj = Instantiate(house);
