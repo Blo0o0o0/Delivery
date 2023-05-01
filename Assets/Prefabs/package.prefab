@@ -141,6 +141,6 @@ MonoBehaviour:
   target: {fileID: 0}
   endOfTube: {fileID: 0}
   suckSpeed: 5
-  destroyDistance: 0.3
-  destroyTime: 0.3
+  destroyDistance: 2
+  destroyTime: 0.2
   inventory: {fileID: 0}

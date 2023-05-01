@@ -7,8 +7,10 @@ public class TargetingScript : MonoBehaviour
     public LayerMask targetable;
     public Transform van;
     public float maxDistanceFromVan;
+    public float heightOffset;
     Ray ray;
     RaycastHit hitInfo;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +31,7 @@ public class TargetingScript : MonoBehaviour
             {
                 transform.position = (transform.position - van.position).normalized * maxDistanceFromVan + van.position;
             }
+            transform.position += Vector3.up * heightOffset;
         }
     }
 }
