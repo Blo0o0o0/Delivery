@@ -8,9 +8,11 @@ public class GeneratorBuilding : MonoBehaviour
     public int numPackages;
     public GeneratorManager manager;
     public StackPackages stacker;
+    public GameOver gameOver;
     int maxPackages;
     float packageTimer;
     float timer=0;
+    string[] itemNames = { "Meat", "Bread", "Milk", "Takeaway", "Ice Cream", "Pizza", "Curry", "Groceries" };
     // Start is called before the first frame update
     void Start()
     {
@@ -40,10 +42,11 @@ public class GeneratorBuilding : MonoBehaviour
         if (numPackages > maxPackages)
         {
             timer += Time.deltaTime;
+            gameOver.SetCountDownText((int)(packageTimer - timer), type);
             if (timer > packageTimer)
             {
                 //we die here
-                
+                gameOver.SetGameOver("You didn't collect " + itemNames[type] + "in time :(");
             }
         }
         else
