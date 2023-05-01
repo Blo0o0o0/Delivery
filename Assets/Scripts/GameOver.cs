@@ -24,6 +24,8 @@ public class GameOver : MonoBehaviour
         }
         gameOver.text = outputText;
         menuButton.SetActive(true);
+
+        PlayerPrefs.SetInt("highScore", Mathf.Max(PlayerPrefs.GetInt("highScore", 0), score.GetPoints()));
     }
     public void SetCountDownText(int num, int type)
     {
