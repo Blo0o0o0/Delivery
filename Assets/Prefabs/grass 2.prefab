@@ -99,7 +99,7 @@ MonoBehaviour:
   foliage:
   - {fileID: 6902821918295901308, guid: e51c7f62dce24cf4bbff7b4e35e6e34f, type: 3}
   Variance: {x: 0.5, y: 0.5}
-  initHeight: 2.5
+  initHeight: 0
   probsToPlace: 0.1
   stepSize: 2
   start: -3
