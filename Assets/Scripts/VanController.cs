@@ -8,6 +8,7 @@ public class VanController : MonoBehaviour
     public float acceleration;
     public float drag;
     public float maxTurnSpeed;
+    public Animator anim;
     Vector2 currentVelocity;
     Vector2 currentAxis;
     // Start is called before the first frame update
@@ -19,6 +20,14 @@ public class VanController : MonoBehaviour
     void GetAxis()
     {
         currentAxis = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        if(currentAxis.magnitude > 0)
+        {
+            anim.SetBool("driving", true);
+        }
+        else
+        {
+            anim.SetBool("driving", false);
+        }
     }
 
     void CalculateNewSpeed()
