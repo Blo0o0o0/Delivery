@@ -8,12 +8,13 @@ public class CollectorBuilding : MonoBehaviour
     public ScoreManager score;
     public int packagesLayer;
     public List<int> packages;
-    public CollectorIcons icons;
+    CollectorIcons icons;
     int maxPackages = 3;
     // Start is called before the first frame update
     void Start()
     {
         manager.AddCollector(this);
+        icons = GetComponent<CollectorIcons>();
     }
 
     public bool AddPackage(int type)

@@ -21,7 +21,10 @@ public class MapGenerator : MonoBehaviour
     public GameObject pizzaria;//p
     public GameObject curry;//u
     public GameObject groceries;//r
+    public GameObject house;//h
     public TextAsset map;
+
+    public GameObject score;
     
 
     string fileContents;
@@ -95,10 +98,15 @@ public class MapGenerator : MonoBehaviour
                         obj = Instantiate(groceries);
                         obj.GetComponent<GeneratorBuilding>().manager = GetComponent<GeneratorManager>();
                         break;
+                    case 'h':
+                        obj = Instantiate(house);
+                        obj.GetComponent<CollectorBuilding>().score = score.GetComponent<ScoreManager>();
+                        obj.GetComponent<CollectorBuilding>().manager = GetComponent<CollectorManager>();
+                        break;
 
                 }
                 //badkipur
-                obj.transform.position = startPosition + tileSize * tileScale * x * Vector3.right + tileSize * tileScale * y * Vector3.forward;
+                obj.transform.position = startPosition + tileSize * tileScale * x * Vector3.right + tileSize * tileScale * -y * Vector3.forward;
                 obj.transform.rotation = Quaternion.Euler(new Vector3(obj.transform.rotation.eulerAngles.x, 90 * numRotations, obj.transform.eulerAngles.z));
                 //obj.transform.Rotate(0, 90 * numRotations, 0);
                 obj.transform.localScale *= tileScale * 1.001f;
