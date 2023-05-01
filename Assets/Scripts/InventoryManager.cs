@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
-    public Text inventoryText;
     public Text selectedText;
     int[] inventory = {0, 0, 0, 0, 0, 0, 0, 0};
     public string[] itemNames = {"Meat", "Bread", "Milk", "Takeaway", "Ice Cream", "Pizza", "Curry", "Groceries"};
@@ -23,10 +22,8 @@ public class InventoryManager : MonoBehaviour
         // for all the items in the inventory
         for(int i = 0; i < inventory.Length; i++)
         {
-            inventoryText.text += itemNames[i].ToString() + ": " + inventory[i].ToString() + "\n";
             inventoryImages[i].transform.GetChild(0).GetComponent<Text>().text = inventory[i].ToString();
         }
-        inventoryText.text += "Currently Selected: " + itemNames[currentlyHeld];
         selectedText.text = itemNames[currentlyHeld];
 
 
@@ -34,15 +31,11 @@ public class InventoryManager : MonoBehaviour
 
     void Update()
     {
-        // reset the inventory
-        inventoryText.text = "";
         for(int i = 0; i < inventory.Length; i++)
         {
-            inventoryText.text += itemNames[i].ToString() + ": " + inventory[i].ToString() + "\n";
             inventoryImages[i].transform.GetChild(0).GetComponent<Text>().text = inventory[i].ToString();
         }
         SetType(((int)(Input.mouseScrollDelta.y * scrollSens)));
-        inventoryText.text += "Currently Selected: " + itemNames[currentlyHeld];
         selectedText.text = itemNames[currentlyHeld];
         inventoryHighlight.transform.position = inventoryImages[currentlyHeld].transform.position;
         if (inventory[currentlyHeld] == 0)

@@ -8,6 +8,7 @@ public class CollectorBuilding : MonoBehaviour
     public ScoreManager score;
     public int packagesLayer;
     public List<int> packages;
+    public CollectorIcons icons;
     int maxPackages = 3;
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,7 @@ public class CollectorBuilding : MonoBehaviour
             return false;
         }
         packages.Add(type);
+        icons.Display(packages);
         return true;
     }
 
@@ -34,13 +36,16 @@ public class CollectorBuilding : MonoBehaviour
             if(packages.Contains(type))
             {
                 packages.Remove(type);
+                icons.Display(packages);
                 //add score
                 score.AddPoints(1);
+                Destroy(other.gameObject);
             }
             else
             {
                 //subtract score
                 score.AddPoints(-1);
+                Destroy(other.gameObject);
             }
         }
     }
