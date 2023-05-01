@@ -17,7 +17,8 @@ public class CustomBoxCollider : MonoBehaviour
         float x = Mathf.Abs(diff.x);
         float y = Mathf.Abs(diff.y);
         float z = Mathf.Abs(diff.z);
-        return (x < boxSize.x + size.x * transform.lossyScale.x && y < boxSize.y + size.y * transform.lossyScale.y && z < boxSize.z + size.z * transform.lossyScale.z);
+        Vector3 scaledSize = Vector3.Max(size, Vector3.Scale(boxSize, transform.lossyScale));
+        return (x < scaledSize.x && y < scaledSize.y && z < scaledSize.z);
     }
 
     private void OnDrawGizmos()

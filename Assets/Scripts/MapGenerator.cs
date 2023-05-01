@@ -25,6 +25,7 @@ public class MapGenerator : MonoBehaviour
     public GameObject curry;//u
     public GameObject groceries;//r
     public GameObject house;//h
+    public GameObject fence;//f
     public TextAsset map;
 
     public GameObject score;
@@ -138,11 +139,14 @@ public class MapGenerator : MonoBehaviour
                         obj.GetComponent<CollectorBuilding>().score = score.GetComponent<ScoreManager>();
                         obj.GetComponent<CollectorBuilding>().manager = GetComponent<CollectorManager>();
                         break;
+                    case 'f':
+                        obj = Instantiate(fence);
+                        break;
 
                 }
                 //badkipur
                 obj.transform.position = startPosition + tileSize * tileScale * x * Vector3.right + tileSize * tileScale * -y * Vector3.forward;
-                obj.transform.rotation = Quaternion.Euler(new Vector3(obj.transform.rotation.eulerAngles.x, 90 * numRotations, obj.transform.eulerAngles.z));
+                obj.transform.rotation = Quaternion.Euler(new Vector3(0, 90 * numRotations, 0));
                 //obj.transform.Rotate(0, 90 * numRotations, 0);
                 obj.transform.localScale *= tileScale * 1.001f;
                 obj.gameObject.layer = 3;

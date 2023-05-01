@@ -51,6 +51,7 @@ MonoBehaviour:
   numPackages: 0
   manager: {fileID: 0}
   stacker: {fileID: 121657198602792748}
+  gameOver: {fileID: 0}
 --- !u!1001 &3614246940760833809
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -80,19 +81,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 610806582648754451, guid: fec0b8eff701a374cac1f524a4a23bdc, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071067
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 610806582648754451, guid: fec0b8eff701a374cac1f524a4a23bdc, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 610806582648754451, guid: fec0b8eff701a374cac1f524a4a23bdc, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 610806582648754451, guid: fec0b8eff701a374cac1f524a4a23bdc, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 610806582648754451, guid: fec0b8eff701a374cac1f524a4a23bdc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

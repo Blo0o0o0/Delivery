@@ -76,7 +76,7 @@ public class VanController : MonoBehaviour
             rotatedCollider = new Vector3(colliderSize.z, colliderSize.y, colliderSize.x);
         }
         Vector3 newPosition =transform.position + transform.forward * Time.deltaTime * currentVelocity.magnitude;
-        if (!collisions.isColliding(newPosition + colliderCentre, colliderSize))
+        if (!collisions.isColliding(newPosition + Vector3.Scale(transform.lossyScale, colliderCentre), rotatedCollider))
         {
             transform.position = newPosition;
         }
@@ -91,6 +91,6 @@ public class VanController : MonoBehaviour
             rotatedCollider = new Vector3(colliderSize.z, colliderSize.y, colliderSize.x);
         }
         // Draw the debug cuboid
-        Gizmos.DrawWireCube(transform.position + colliderCentre, rotatedCollider);
+        Gizmos.DrawWireCube(transform.position + Vector3.Scale(transform.lossyScale, colliderCentre), rotatedCollider);
     }
 }
