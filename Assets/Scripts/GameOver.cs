@@ -7,6 +7,7 @@ public class GameOver : MonoBehaviour
 {
     public Text gameOver;
     public ScoreManager score;
+    public GameObject menuButton;
     public List<MonoBehaviour> scriptsToDisable;
     string[] itemNames = { "Meat", "Bread", "Milk", "Takeaway", "Ice Cream", "Pizza", "Curry", "Groceries" };
     string countDown;
@@ -16,12 +17,13 @@ public class GameOver : MonoBehaviour
     {
         dead = true;
         string outputText = "You died because " + deathReason + "\n";
-        outputText += "You got a score of " + score.ToString() + "\n";
+        outputText += "You got a score of " + score.GetPoints().ToString() + "\n";
         foreach (MonoBehaviour script in scriptsToDisable)
         {
             script.enabled = false;
         }
         gameOver.text = outputText;
+        menuButton.SetActive(true);
     }
     public void SetCountDownText(int num, int type)
     {
