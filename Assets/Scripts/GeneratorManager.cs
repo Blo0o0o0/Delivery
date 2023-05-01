@@ -18,18 +18,12 @@ public class GeneratorManager : MonoBehaviour
 
     public void AddGenerator(GeneratorBuilding generator)
     {
-        print(generator);
-        print(generators);
-        print("hi");
         generators.Add(generator);
-        print(generators);
     }
 
     //choose a random generator and generate a package there.
     void Generate()
     {
-        print(generators);
-        print(Random.Range(0, generators.Count));
         int type = generators[Random.Range(0, generators.Count)].Generate();
 
         //assign the package to a collector
