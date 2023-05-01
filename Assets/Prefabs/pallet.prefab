@@ -763,6 +763,7 @@ GameObject:
   - component: {fileID: 6811908655456037051}
   - component: {fileID: 6413824788269158189}
   - component: {fileID: 6413824788269158226}
+  - component: {fileID: 4491388533528484408}
   m_Layer: 3
   m_Name: pallet
   m_TagString: Untagged
@@ -813,6 +814,7 @@ MonoBehaviour:
   dropLocation: {x: 0, y: 1000, z: 0}
   endOfTube: {fileID: 0}
   target: {fileID: 0}
+  inventory: {fileID: 0}
 --- !u!65 &6413824788269158226
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -826,6 +828,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.1512449, y: 0.5486141, z: 3.7687616}
   m_Center: {x: 0.004262805, y: -0.22569296, z: 0}
+--- !u!114 &4491388533528484408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6179803421771428353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1c83d2a40d17004cb35c03a68a01ab6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  center: {x: 0, y: -0.022, z: 0}
+  size: {x: 3.09, y: 0.5, z: 3.6}
 --- !u!1 &6330772044152882315
 GameObject:
   m_ObjectHideFlags: 0

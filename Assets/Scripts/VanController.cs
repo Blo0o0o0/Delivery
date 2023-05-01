@@ -9,6 +9,9 @@ public class VanController : MonoBehaviour
     public float drag;
     public float maxTurnSpeed;
     public Animator anim;
+    public ColliderManager collisions;
+    public Vector3 colliderCentre;
+    public Vector3 colliderSize;
     Vector2 currentVelocity;
     Vector2 currentAxis;
     // Start is called before the first frame update
@@ -67,6 +70,27 @@ public class VanController : MonoBehaviour
         GetAxis();
         CalculateNewSpeed();
         FaceMoveDirection();
-        transform.position += transform.forward * Time.deltaTime * currentVelocity.magnitude;
+        Vector3 rotatedCollider = colliderSize;
+        if(Mathf.Abs(currentVelocity.y) < Mathf.Abs(currentVelocity.x))
+        {
+            rotatedCollider = new Vector3(colliderSize.z, colliderSize.y, colliderSize.x);
+        }
+        Vector3 newPosition =transform.position + transform.forward * Time.deltaTime * currentVelocity.magnitude;
+        if (!collisions.isColliding(newPosition + colliderCentre, colliderSize))
+        {
+            transform.position = newPosition;
+        }
+
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Vector3 rotatedCollider = colliderSize;
+        if (Mathf.Abs(currentVelocity.y) < Mathf.Abs(currentVelocity.x))
+        {
+            rotatedCollider = new Vector3(colliderSize.z, colliderSize.y, colliderSize.x);
+        }
+        // Draw the debug cuboid
+        Gizmos.DrawWireCube(transform.position + colliderCentre, rotatedCollider);
     }
 }

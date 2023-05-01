@@ -51,6 +51,7 @@ MonoBehaviour:
   numPackages: 0
   manager: {fileID: 0}
   stacker: {fileID: 893364087436643259}
+  gameOver: {fileID: 0}
 --- !u!1001 &4133942076326074673
 PrefabInstance:
   m_ObjectHideFlags: 0
