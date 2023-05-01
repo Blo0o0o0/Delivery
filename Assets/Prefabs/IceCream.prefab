@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5cd9aa74069b2842ae82fad460f60ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 3
+  type: 4
   numPackages: 0
   manager: {fileID: 0}
   stacker: {fileID: 3128309313114420911}

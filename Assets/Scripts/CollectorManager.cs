@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CollectorManager : MonoBehaviour
 {
-    List<CollectorBuilding> collectors;
+    public List<CollectorBuilding> collectors;
     // Start is called before the first frame update
     void Start()
     {

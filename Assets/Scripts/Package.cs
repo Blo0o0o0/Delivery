@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Package : MonoBehaviour
 {
+    public List<Material> materials;
     public int type;
     public float hitDistance;
     public GameObject target;
@@ -16,7 +17,7 @@ public class Package : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GetComponent<MeshRenderer>().sharedMaterial = materials[type];
     }
 
     // Update is called once per frame

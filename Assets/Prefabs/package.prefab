@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4326243460804999079}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -5495902117074765545, guid: a0bcaac99a370aa458e8d0c41c302701, type: 3}
 --- !u!23 &4326243460804999072
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7ee12acc10eb7fb4d8a5b36713459f3a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -97,7 +97,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &4326243460804999078
 Rigidbody:
@@ -127,10 +127,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59f7e9a33f031c044ba2ee4b03fb0e50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  materials:
+  - {fileID: 2100000, guid: 497d3c7f9bf98d1469287b7be16aecc2, type: 2}
+  - {fileID: 2100000, guid: 7ee12acc10eb7fb4d8a5b36713459f3a, type: 2}
+  - {fileID: 2100000, guid: 4439c6762734b174f94d8bd6fda5b198, type: 2}
+  - {fileID: 2100000, guid: aa33a338cd6c3654f8a57d4af4c51e1b, type: 2}
+  - {fileID: 2100000, guid: 83b8fae85dbefb741a6154d5283a95e5, type: 2}
+  - {fileID: 2100000, guid: eaac673f6f018b5479ff68908793b40e, type: 2}
+  - {fileID: 2100000, guid: 78e88866c19facf489a6c8513886cd1c, type: 2}
+  - {fileID: 2100000, guid: e04289315c7552047b2138364377df7c, type: 2}
   type: 0
-  hitDistance: 0.5
+  hitDistance: 1
   target: {fileID: 0}
   endOfTube: {fileID: 0}
   suckSpeed: 5
   destroyDistance: 0.3
   destroyTime: 0.3
+  inventory: {fileID: 0}
