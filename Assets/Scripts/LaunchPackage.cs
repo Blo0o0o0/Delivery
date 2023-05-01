@@ -14,6 +14,7 @@ public class LaunchPackage : MonoBehaviour
     public Animator anim;
     public GameObject endOfTube;
     public InventoryManager inventory;
+    public AudioClip catapultSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +45,7 @@ public class LaunchPackage : MonoBehaviour
 
     void Launch()
     {
+        AudioSource.PlayClipAtPoint(catapultSound, transform.position);
         if(packageType == -1)
         {
             return;

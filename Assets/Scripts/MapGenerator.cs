@@ -35,7 +35,7 @@ public class MapGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.visible = false;
+        //Cursor.visible = false;
         fileContents = map.text;
         char[] whitespace = new char[] { ' ', '\t', '\n', '\r' };
         string[] words = fileContents.Split(whitespace, System.StringSplitOptions.RemoveEmptyEntries);

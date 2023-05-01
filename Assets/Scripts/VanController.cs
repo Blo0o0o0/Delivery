@@ -12,6 +12,10 @@ public class VanController : MonoBehaviour
     public ColliderManager collisions;
     public Vector3 colliderCentre;
     public Vector3 colliderSize;
+    public AudioSource collisionSound;
+    public AudioSource vroomSound;
+    public LayerMask targetable;
+    public float height;
     Vector2 currentVelocity;
     Vector2 currentAxis;
     // Start is called before the first frame update
@@ -80,6 +84,20 @@ public class VanController : MonoBehaviour
         {
             transform.position = newPosition;
         }
+        else
+        {
+            if(!collisionSound.isPlaying)
+                collisionSound.Play();
+        }
+        vroomSound.pitch = 1 + (currentVelocity.magnitude) / (maxSpeed * 2);
+
+        //adjust height
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position + Vector3.up * 1, -(Vector3.up), out hit, Mathf.Infinity, targetable))
+        {
+            transform.position = transform.position - transform.position.y * Vector3.up + Vector3.up * (hit.point.y + height);
+        }
+
 
     }
     private void OnDrawGizmos()

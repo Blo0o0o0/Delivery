@@ -13,6 +13,7 @@ public class Package : MonoBehaviour
     public float destroyDistance;
     public float destroyTime;
     public InventoryManager inventory;
+    public AudioClip hitSound;
     bool sucking = false;
     // Start is called before the first frame update
     void Start()
@@ -49,5 +50,9 @@ public class Package : MonoBehaviour
             //add it to the inventory
             inventory.AddItem(type);
         }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        AudioSource.PlayClipAtPoint(hitSound, transform.position);
     }
 }

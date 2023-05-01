@@ -15,9 +15,12 @@ public class GameOver : MonoBehaviour
     string countDown;
     bool dead=false;
     string outputText;
+    bool countingDown;
     float timer = 0;
     public void SetGameOver(string deathReason)
     {
+        if (dead)
+            return;
         dead = true;
         outputText = "You died because " + deathReason + "\n";
         outputText += "You got a score of " + score.GetPoints().ToString() + "\n";
@@ -31,13 +34,16 @@ public class GameOver : MonoBehaviour
     }
     public void SetCountDownText(int num, int type)
     {
-        countDown += "You have " + num.ToString() + " seconds left to collect " + itemNames[type];
+        if(!countingDown)
+            countDown += "You have " + num.ToString() + " seconds left to collect " + itemNames[type];
+        countingDown = true;
     }
     private void LateUpdate()
     {
         if(!dead)
             gameOver.text = countDown;
         countDown = "";
+        countingDown = false;
         if(dead)
         {
             timer += Time.deltaTime;

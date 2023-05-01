@@ -144,3 +144,4 @@ MonoBehaviour:
   destroyDistance: 2
   destroyTime: 0.2
   inventory: {fileID: 0}
+  hitSound: {fileID: 8300000, guid: 967e5492c0c57a8478cb15fcd4793f70, type: 3}

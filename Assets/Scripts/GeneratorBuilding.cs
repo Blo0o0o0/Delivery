@@ -46,7 +46,7 @@ public class GeneratorBuilding : MonoBehaviour
             if (timer > packageTimer)
             {
                 //we die here
-                gameOver.SetGameOver("You didn't collect " + itemNames[type] + " in time :(");
+                gameOver.SetGameOver("You didn't collect " + itemNames[type] + " in time");
             }
         }
         else
