@@ -17,7 +17,7 @@ public class CustomBoxCollider : MonoBehaviour
         float x = Mathf.Abs(diff.x);
         float y = Mathf.Abs(diff.y);
         float z = Mathf.Abs(diff.z);
-        Vector3 scaledSize = Vector3.Max(size, Vector3.Scale(boxSize, transform.lossyScale));
+        Vector3 scaledSize = (boxSize + Vector3.Scale(size, transform.lossyScale))/2;
         return (x < scaledSize.x && y < scaledSize.y && z < scaledSize.z);
     }
 

@@ -90,7 +90,8 @@ public class VanController : MonoBehaviour
         {
             rotatedCollider = new Vector3(colliderSize.z, colliderSize.y, colliderSize.x);
         }
-        // Draw the debug cuboid
-        Gizmos.DrawWireCube(transform.position + Vector3.Scale(transform.lossyScale, colliderCentre), rotatedCollider);
+
+        Vector3 newPosition = transform.position + transform.forward * Time.deltaTime * currentVelocity.magnitude;
+        Gizmos.DrawWireCube(newPosition + Vector3.Scale(transform.lossyScale, colliderCentre), rotatedCollider);
     }
 }
