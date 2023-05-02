@@ -10,7 +10,7 @@ public class StackPackages : MonoBehaviour
     public GameObject target;
     public InventoryManager inventory;
 
-    public void Stack(int type)
+    public void Stack(int type, GeneratorBuilding building)
     {
         var obj = Instantiate(package);
         obj.transform.position = transform.position + dropLocation;
@@ -18,6 +18,7 @@ public class StackPackages : MonoBehaviour
         obj.GetComponent<Package>().endOfTube = endOfTube;
         obj.GetComponent<Package>().target = target;
         obj.GetComponent<Package>().inventory = inventory;
+        obj.GetComponent<Package>().generatorBuilding = building;
     }
 
 }

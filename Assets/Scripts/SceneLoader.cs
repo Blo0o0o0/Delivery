@@ -9,4 +9,9 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(sceneName);
         Cursor.visible = true;
     }
+    public void QuitGame()
+    {
+        Application.Quit();
+        print("hi");
+    }
 }

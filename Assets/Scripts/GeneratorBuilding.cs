@@ -23,7 +23,7 @@ public class GeneratorBuilding : MonoBehaviour
     public int Generate()
     {
         numPackages++;
-        stacker.Stack(type);
+        stacker.Stack(type, this);
         return type;
     }
     public int Suck()

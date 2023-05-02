@@ -14,6 +14,7 @@ public class Package : MonoBehaviour
     public float destroyTime;
     public InventoryManager inventory;
     public AudioClip hitSound;
+    public GeneratorBuilding generatorBuilding;
     bool sucking = false;
     // Start is called before the first frame update
     void Start()
@@ -49,6 +50,7 @@ public class Package : MonoBehaviour
         {
             //add it to the inventory
             inventory.AddItem(type);
+            generatorBuilding.Suck();
         }
     }
     private void OnCollisionEnter(Collision collision)

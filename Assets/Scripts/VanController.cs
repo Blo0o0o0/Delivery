@@ -16,6 +16,7 @@ public class VanController : MonoBehaviour
     public AudioSource vroomSound;
     public LayerMask targetable;
     public float height;
+    public CameraFollow cam;
     Vector2 currentVelocity;
     Vector2 currentAxis;
     // Start is called before the first frame update
@@ -26,7 +27,8 @@ public class VanController : MonoBehaviour
 
     void GetAxis()
     {
-        currentAxis = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        Quaternion rot = Quaternion.Euler(0, 0, -cam.currentOffset * 90);
+        currentAxis = rot* new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         if(currentAxis.magnitude > 0)
         {
             anim.SetBool("driving", true);
