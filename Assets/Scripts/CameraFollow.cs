@@ -4,64 +4,57 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
+    public float maxNodAngle;
+    public float minNodAngle;
+    public float startNodAngle;
+    public float cameraSensx;
+    public float cameraSensy;
     public float smoothness;
     public Transform targetObject;
     public Animator otherAnim;
     private Vector3 initalOffset;
-    private Vector3 initalOffset1;
-    private Vector3 initalOffset2;
-    private Vector3 initalOffset3;
-    private Vector3 initalOffset4;
-    private Vector3 initialOffset;
-    public int currentOffset;
     private Vector3 cameraPosition;
     private Quaternion cameraRotation;
     private Animator anim;
+    private float goalRotation = 0;
+    private float currentNodAngle;
 
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = true;
         anim = GetComponent<Animator>();
-        initalOffset1 = transform.position - targetObject.position;
-        initalOffset = initalOffset1;
-        initalOffset2 = new Vector3(initalOffset.z, initalOffset.y, initalOffset.x);
-        initalOffset3 = new Vector3(initalOffset.x, initalOffset.y, -initalOffset.z);
-        initalOffset4 = new Vector3(-initalOffset.z, initalOffset.y, initalOffset.x);
+        initalOffset = transform.position - targetObject.position;
+        currentNodAngle = startNodAngle;
     }
 
     void LateUpdate()
     {
-        if(Input.GetKeyDown(KeyCode.Q))
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = true;
+        //nod the camera up and down with mouse movement
+        currentNodAngle -= Input.GetAxis("Mouse Y") * cameraSensy;
+        if(currentNodAngle < minNodAngle)
         {
-            currentOffset--;
+            currentNodAngle = minNodAngle;
         }
-        if(Input.GetKeyDown(KeyCode.E))
+        
+        if(currentNodAngle > maxNodAngle)
         {
-            currentOffset++;
+            currentNodAngle = maxNodAngle;
         }
-        while(currentOffset<0)
-        {
-            currentOffset += 4;
-        }
-        currentOffset %= 4;
-        switch(currentOffset)
-        {
-            case 0:
-                initalOffset = initalOffset1;
-                break;
-            case 1:
-                initalOffset = initalOffset2;
-                break;
-            case 2:
-                initalOffset = initalOffset3;
-                break;
-            case 3:
-                initalOffset = initalOffset4;
-                break;
-        }
-        cameraPosition = targetObject.position + initalOffset;
-        cameraRotation = Quaternion.Euler(transform.rotation.eulerAngles.x, 90 * currentOffset, transform.rotation.eulerAngles.z);
-        transform.position = Vector3.Lerp(transform.position, cameraPosition, smoothness*Time.deltaTime);
-        transform.rotation = Quaternion.Slerp(transform.rotation, cameraRotation, smoothness*Time.deltaTime);
+        //position the camera and rotate it by mouse movement left and right
+        goalRotation += Input.GetAxis("Mouse X") * cameraSensx;
+        Quaternion rotation = Quaternion.Euler(0f, goalRotation, 0f);
+
+        cameraPosition = Vector3.Lerp(cameraPosition, targetObject.position, smoothness * Time.deltaTime);
+        cameraRotation = Quaternion.Euler(startNodAngle, goalRotation , transform.rotation.eulerAngles.z);
+        transform.position = cameraPosition;
+        transform.position += cameraRotation*initalOffset;
+        transform.rotation = Quaternion.Euler(currentNodAngle, goalRotation, transform.rotation.eulerAngles.z);
+
+ 
+
         if(Input.GetMouseButton(1))
         {
             anim.SetBool("sucking", true);
@@ -71,5 +64,10 @@ public class CameraFollow : MonoBehaviour
             anim.SetBool("sucking", false);
         }
         anim.SetBool("throwing", otherAnim.GetBool("Launching"));
+    }
+
+    public float getAngle()
+    {
+        return goalRotation;
     }
 }

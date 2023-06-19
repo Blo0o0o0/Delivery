@@ -27,7 +27,7 @@ public class VanController : MonoBehaviour
 
     void GetAxis()
     {
-        Quaternion rot = Quaternion.Euler(0, 0, -cam.currentOffset * 90);
+        Quaternion rot = Quaternion.Euler(0, 0, -cam.getAngle());
         currentAxis = rot* new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         if(currentAxis.magnitude > 0)
         {
