@@ -145,10 +145,8 @@ public class MapGenerator : MonoBehaviour
                         break;
 
                 }
-                //badkipur
                 obj.transform.position = startPosition + tileSize * tileScale * x * Vector3.right + tileSize * tileScale * -y * Vector3.forward;
                 obj.transform.rotation = Quaternion.Euler(new Vector3(0, 90 * numRotations, 0));
-                //obj.transform.Rotate(0, 90 * numRotations, 0);
                 obj.transform.localScale *= tileScale * 1.001f;
                 obj.gameObject.layer = 3;
                 obj.AddComponent<MeshCollider>();
